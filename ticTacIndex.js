@@ -58,13 +58,13 @@ function validateToken(req, res, next) {
 };
 
 // POST request that returns our token
-app.post('/api/token', (req, res) => {
+app.post('https://exo-tic-tac-trip-angel.herokuapp.com/api/token', (req, res) => {
     const email = 'foo@bar.com';
     res.json({ email: email });
 });
 
 // POST request that returns a justified text
-app.post('/api/justify', validateToken, (req, res) => {
+app.post('https://exo-tic-tac-trip-angel.herokuapp.com/api/justify', validateToken, (req, res) => {
     const text = JSON.stringify(req.body);
     dailyWordCounter(text);
     
